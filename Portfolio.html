@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jane Doe | Consumer Experience Strategist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero-pattern {
+            background-image: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.1) 0%, rgba(255, 255, 255, 1) 90%);
+        }
+        
+        /* Custom animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+        
+        /* Pulse animation for CTA */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold gradient-text">Jane Doe</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
+                    <a href="#experience" class="text-gray-700 hover:text-blue-600 transition">Experience</a>
+                    <a href="#work" class="text-gray-700 hover:text-blue-600 transition">Work</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-blue-600 transition">Testimonials</a>
+                    <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-700 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">About</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Experience</a>
+                <a href="#work" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Work</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Testimonials</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 hero-pattern md:pt-32 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:flex items-center justify-between">
+                <div class="lg:w-1/2 mb-12 lg:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
+                        Crafting <span class="gradient-text">Exceptional</span> Consumer Experiences
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        I'm Jane Doe, a Consumer Experience Strategist passionate about designing seamless journeys that delight customers and drive business growth.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#work" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition shadow-md pulse">
+                            View My Work
+                        </a>
+                        <a href="#contact" class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-md font-medium transition">
+                            Contact Me
+                        </a>
+                    </div>
+                    <div class="mt-8 flex space-x-6">
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition">
+                            <i class="fab fa-medium-m text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+                        <div class="absolute inset-0 bg-blue-100 rounded-full overflow-hidden floating">
+                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" 
+                                 alt="Jane Doe" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-lg shadow-md">
+                            <div class="text-blue-600 font-bold text-2xl">8+</div>
+                            <div class="text-gray-600 text-sm">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="lg:flex items-center">
+                <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Who I Am</h3>
+                    <p class="text-gray-600 mb-6">
+                        I'm a Consumer Experience Strategist with a passion for understanding human behavior and translating insights into memorable brand interactions. With a background in psychology and business, I bridge the gap between customer needs and business goals.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        My approach combines creative problem-solving with data-driven methodologies to design experiences that resonate emotionally while delivering measurable results.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Experience Design</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Journey Mapping</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Customer Research</span>
+                        <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Service Blueprinting</span>
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">UX Strategy</span>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-xl">
+                        <h4 class="text-xl font-semibold text-gray-900 mb-6">My Philosophy</h4>
+                        <div class="space-y-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <i class="fas fa-lightbulb text-blue-600"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h5 class="font-medium text-gray-900">Customer-Centric Innovation</h5>
+                                    <p class="text-gray-600 mt-1">
+                                        True innovation starts with deep customer understanding, not technology.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center">
+                                        <i class="fas fa-project-diagram text-purple-600"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h5 class="font-medium text-gray-900">Holistic Experience Design</h5>
+                                    <p class="text-gray-600 mt-1">
+                                        Every touchpoint matters - from digital to physical to emotional.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                                        <i class="fas fa-chart-line text-green-600"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h5 class="font-medium text-gray-900">Data-Informed Creativity</h5>
+                                    <p class="text-gray-600 mt-1">
+                                        The magic happens when insights meet imagination.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Experience & Education</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Work Experience -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6 flex items-center">
+                        <i class="fas fa-briefcase mr-3 text-blue-600"></i> Work Experience
+                    </h3>
+                    
+                    <div class="space-y-8">
+                        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-900">Lead CX Strategist</h4>
+                                    <p class="text-blue-600">Global Retail Solutions</p>
+                                </div>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">2020 - Present</span>
+                            </div>
+                            <p class="text-gray-600 mt-3">
+                                Lead cross-functional teams to redesign end-to-end customer journeys, resulting in 32% improvement in NPS scores across key touchpoints.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-900">Senior Experience Designer</h4>
+                                    <p class="text-blue-600">FinTech Innovations Inc.</p>
+                                </div>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">2017 - 2020</span>
+                            </div>
+                            <p class="text-gray-600 mt-3">
+                                Designed digital banking experiences that improved customer onboarding completion by 45% and reduced support calls by 28%.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-900">UX Researcher</h4>
+                                    <p class="text-blue-600">Consulting Partners</p>
+                                </div>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">2015 - 2017</span>
+                            </div>
+                            <p class="text-gray-600 mt-3">
+                                Conducted ethnographic research across 4 countries to uncover unmet customer needs in healthcare services.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6 flex items-center">
+                        <i class="fas fa-graduation-cap mr-3 text-blue-600"></i> Education
+                    </h3>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition mb-8">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-bold text-lg text-gray-900">MSc in Human-Centered Design</h4>
+                                <p class="text-blue-600">Stanford University</p>
+                            </div>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">2013 - 2015</span>
+                        </div>
+                        <p class="text-gray-600 mt-3">
+                            Specialized in service design and behavioral psychology. Thesis on "Emotional Triggers in Digital Onboarding Experiences."
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-bold text-lg text-gray-900">BA in Psychology & Business</h4>
+                                <p class="text-blue-600">University of Michigan</p>
+                            </div>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">2009 - 2013</span>
+                        </div>
+                        <p class="text-gray-600 mt-3">
+                            Double major with honors. Published research on consumer decision-making biases in e-commerce.
+                        </p>
+                    </div>
+                    
+                    <!-- Certifications -->
+                    <h3 class="text-2xl font-semibold text-gray-900 mt-12 mb-6 flex items-center">
+                        <i class="fas fa-certificate mr-3 text-blue-600"></i> Certifications
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition flex items-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-user-tie text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-900">CCXP</h4>
+                                <p class="text-sm text-gray-600">Certified CX Professional</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition flex items-center">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-magic text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Service Design</h4>
+                                <p class="text-sm text-gray-600">IDEO U</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition flex items-center">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-brain text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Behavioral Economics</h4>
+                                <p class="text-sm text-gray-600">Harvard Executive Ed</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition flex items-center">
+                            <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-chart-bar text-yellow-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Data Analytics</h4>
+                                <p class="text-sm text-gray-600">General Assembly</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work/Projects Section -->
+    <section id="work" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Selected Work</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                    Here are some of my most impactful projects that demonstrate my approach to consumer experience strategy.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden card-hover transition">
+                    <div class="h-48 bg-blue-100 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-blue-600 to-transparent opacity-30"></div>
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" 
+                             alt="Banking Experience" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded-full mr-2">Financial Services</span>
+                            <span class="text-gray-500 text-sm">2022</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Digital Banking Transformation</h3>
+                        <p class="text-gray-600 mb-4">
+                            Redesigned the end-to-end digital banking experience for a regional bank, increasing mobile adoption by 62%.
+                        </p>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                            View Case Study <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden card-hover transition">
+                    <div class="h-48 bg-purple-100 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-purple-600 to-transparent opacity-30"></div>
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" 
+                             alt="Retail Experience" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded-full mr-2">Retail</span>
+                            <span class="text-gray-500 text-sm">2021</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Omnichannel Retail Strategy</h3>
+                        <p class="text-gray-600 mb-4">
+                            Created seamless shopping experiences blending digital and physical touchpoints, boosting customer retention by 48%.
+                        </p>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                            View Case Study <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden card-hover transition">
+                    <div class="h-48 bg-green-100 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-green-600 to-transparent opacity-30"></div>
+                        <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" 
+                             alt="Healthcare Experience" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded-full mr-2">Healthcare</span>
+                            <span class="text-gray-500 text-sm">2020</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Patient Journey Redesign</h3>
+                        <p class="text-gray-600 mb-4">
+                            Improved patient satisfaction scores by 76% while reducing administrative burden by 30% for staff.
+                        </p>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                            View Case Study <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    <i class="fas fa-book-open mr-2"></i> View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Testimonials</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                    What clients and colleagues say about working with me.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Sarah Johnson</h4>
+                            <p class="text-gray-600 text-sm">VP of Customer Experience, RetailCo</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "Jane transformed our customer journey approach. Her strategic framework helped us identify key friction points we'd missed for years. The NPS improvements were beyond our expectations."
+                    </p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Michael Chen</h4>
+                            <p class="text-gray-600 text-sm">Product Director, FinTech Solutions</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "Working with Jane was a game-changer. She brought both deep customer empathy and rigorous analytical thinking to our digital transformation project. The team still uses her frameworks years later."
+                    </p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emma Rodriguez" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Emma Rodriguez</h4>
+                            <p class="text-gray-600 text-sm">Chief Experience Officer, HealthPlus</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "Jane has a rare ability to translate complex customer behaviors into actionable business strategies. Her work on our patient experience redesign delivered both better outcomes and operational efficiencies."
+                    </p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white mb-4">Let's Connect</h2>
+                <div class="w-20 h-1 bg-white mx-auto"></div>
+                <p class="text-blue-100 max-w-2xl mx-auto mt-4">
+                    Interested in working together or learning more about my approach to consumer experience strategy? Get in touch!
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-gray-50 p-8 md:p-12">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <i class="fas fa-envelope text-blue-600"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-sm font-medium text-gray-500">Email</h4>
+                                    <a href="mailto:jane@example.com" class="text-base font-medium text-gray-900 hover:text-blue-600">jane@example.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <i class="fas fa-phone-alt text-blue-600"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-sm font-medium text-gray-500">Phone</h4>
+                                    <a href="tel:+1234567890" class="text-base font-medium text-gray-900 hover:text-blue-600">(123) 456-7890</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                                        <i class="fas fa-map-marker-alt text-blue-600"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-sm font-medium text-gray-500">Location</h4>
+                                    <p class="text-base font-medium text-gray-900">San Francisco, CA</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="text-sm font-medium text-gray-500 mb-4">FOLLOW ME</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 hover:bg-blue-600 hover:text-white flex items-center justify-center text-gray-600 transition">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 hover:bg-blue-600 hover:text-white flex items-center justify-center text-gray-600 transition">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 hover:bg-blue-600 hover:text-white flex items-center justify-center text-gray-600 transition">
+                                    <i class="fab fa-medium-m"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-100 hover:bg-blue-600 hover:text-white flex items-center justify-center text-gray-600 transition">
+                                    <i class="fab fa-dribbble"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Send Me a Message</h3>
+                        <form>
+                            <div class="mb-6">
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div class="mb-6">
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div class="mb-6">
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition flex items-center justify-center">
+                                <i class="fas fa-paper-plane mr-2"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:justify-between md:items-center">
+                <div class="text-center md:text-left">
+                    <h3 class="text-xl font-bold mb-2">Jane Doe</h3>
+                    <p class="text-gray-400">Consumer Experience Strategist</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <p class="text-gray-400 text-center md:text-right">
+                        &copy; <span id="year"></span> All Rights Reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const offset = 80; // Adjust for fixed header height
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+        
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
+
+
