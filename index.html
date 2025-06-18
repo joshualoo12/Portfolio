@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joshua Loo | Insight Driven Strategist</title>
+
+  <!-- Tailwind CDN + Enable Dark Mode -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    };
+  </script>
+
+  <!-- FontAwesome & Google Fonts -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-pattern {
+      background-image: radial-gradient(
+        circle at 10% 20%,
+        rgba(59, 130, 246, 0.1) 0%,
+        rgba(255, 255, 255, 1) 90%
+      );
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white">
+  <!-- Dark Mode Toggle -->
+  <button
+    id="darkModeToggle"
+    class="fixed top-4 right-4 z-50 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white p-2 rounded"
+  >
+    <i id="darkModeIcon" class="fas fa-moon"></i>
+  </button>
+
+  <!-- Sample Section -->
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-4">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">
+      Hey, I'm <span class="gradient-text">Joshua Loo</span>
+    </h1>
+    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-xl mb-6">
+      I'm a data-driven strategist focused on creating seamless journeys that
+      delight customers and drive business growth.
+    </p>
+    <div class="flex space-x-4">
+      <a
+        href="#"
+        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition pulse"
+        >View My Work</a
+      >
+      <a
+        href="#"
+        class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-md font-medium transition"
+        >Contact Me</a
+      >
+    </div>
+  </section>
+
+  <!-- Script: Dark Mode Toggle -->
+  <script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const darkModeIcon = document.getElementById('darkModeIcon');
+
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('darkMode', isDark);
+      updateIcons(isDark);
+    }
+
+    function updateIcons(isDark) {
+      if (isDark) {
+        darkModeIcon.classList.replace('fa-moon', 'fa-sun');
+      } else {
+        darkModeIcon.classList.replace('fa-sun', 'fa-moon');
+      }
+    }
+
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const storedPreference = localStorage.getItem('darkMode');
+
+    if (storedPreference === 'true' || (storedPreference === null && prefersDark)) {
+      document.documentElement.classList.add('dark');
+      updateIcons(true);
+    }
+
+    darkModeToggle.addEventListener('click', toggleDarkMode);
+  </script>
+</body>
+</html>

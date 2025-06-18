@@ -1,235 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joshua Loo | Insight Driven Strategist</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joshua Loo | Insight Driven Strategist</title>
 
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
+  <!-- Tailwind CDN + Enable Dark Mode -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    };
+  </script>
 
-        .gradient-text {
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
+  <!-- FontAwesome & Google Fonts -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
-        .hero-pattern {
-            background-image: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.1) 0%, rgba(255, 255, 255, 1) 90%);
-        }
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
 
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
+    .gradient-text {
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
+    .hero-pattern {
+      background-image: radial-gradient(
+        circle at 10% 20%,
+        rgba(59, 130, 246, 0.1) 0%,
+        rgba(255, 255, 255, 1) 90%
+      );
+    }
 
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            transition: all 0.3s ease;
-        }
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
 
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-    </style>
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+  </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="fixed w-full bg-white shadow-sm z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <span class="text-xl font-bold gradient-text">Joshua Loo</span>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
-                    <a href="#experience" class="text-gray-700 hover:text-blue-600 transition">Experience</a>
-                    <a href="#work" class="text-gray-700 hover:text-blue-600 transition">Work</a>
-                    <a href="#testimonials" class="text-gray-700 hover:text-blue-600 transition">Testimonials</a>
-                    <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">Contact</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button id="menu-btn" class="text-gray-700 focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white">
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-white dark:bg-gray-800 shadow-sm z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex items-center">
+          <span class="text-xl font-bold gradient-text">Joshua Loo</span>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">About</a>
-                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Experience</a>
-                <a href="#work" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Work</a>
-                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Testimonials</a>
-                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700">Contact</a>
-            </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">About</a>
+          <a href="#experience" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Experience</a>
+          <a href="#work" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Work</a>
+          <a href="#testimonials" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Testimonials</a>
+          <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">Contact</a>
+          <button id="darkModeToggle" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition focus:outline-none">
+            <i id="darkModeIcon" class="fas fa-moon"></i>
+          </button>
         </div>
-    </nav>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="pt-24 pb-16 hero-pattern md:pt-32 md:pb-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:flex items-center justify-between">
-                <div class="lg:w-1/2 mb-12 lg:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
-                        Crafting <span class="gradient-text">Exceptional</span> Consumer Experiences
-                    </h1>
-                    <p class="text-lg text-gray-600 mb-8">
-                        I'm Joshua Loo, a data-driven strategist focused on creating seamless journeys that delight customers and drive business growth.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#work" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition shadow-md pulse">
-                            View My Work
-                        </a>
-                        <a href="#contact" class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-md font-medium transition">
-                            Contact Me
-                        </a>
-                    </div>
-                    <div class="mt-8 flex space-x-6">
-                        <a href="#" class="text-gray-500 hover:text-blue-600 transition">
-                            <i class="fab fa-linkedin-in text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-500 hover:text-blue-600 transition">
-                            <i class="fab fa-twitter text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-500 hover:text-blue-600 transition">
-                            <i class="fab fa-medium-m text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="lg:w-1/2 flex justify-center">
-                    <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-                        <div class="absolute inset-0 bg-blue-100 rounded-full overflow-hidden floating">
-                            <img src="https://raw.githubusercontent.com/joshualoo12/Portfolio/refs/heads/main/IMG_0308.JPEG" 
-                                 alt="Joshua Loo" 
-                                 class="w-full h-full object-cover">
-                        </div>
-                        <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-lg shadow-md">
-                            <div class="text-blue-600 font-bold text-xl"> Strategist & Analyst </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- Hero Section -->
+  <section id="home" class="pt-24 pb-16 hero-pattern md:pt-32 md:pb-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:flex items-center justify-between">
+        <div class="lg:w-1/2 mb-12 lg:mb-0">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight mb-4">
+            Crafting <span class="gradient-text">Exceptional</span> Consumer Experiences
+          </h1>
+          <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+            I'm Joshua Loo, a data-driven strategist focused on creating seamless journeys that delight customers and drive business growth.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#work" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition shadow-md pulse">View My Work</a>
+            <a href="#contact" class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-md font-medium transition">Contact Me</a>
+          </div>
+          <div class="mt-8 flex space-x-6">
+            <a href="#" class="text-gray-500 hover:text-blue-600 transition"><i class="fab fa-linkedin-in text-xl"></i></a>
+            <a href="#" class="text-gray-500 hover:text-blue-600 transition"><i class="fab fa-twitter text-xl"></i></a>
+            <a href="#" class="text-gray-500 hover:text-blue-600 transition"><i class="fab fa-medium-m text-xl"></i></a>
+          </div>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">About Me</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+        <div class="lg:w-1/2 flex justify-center">
+          <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+            <div class="absolute inset-0 bg-blue-100 rounded-full overflow-hidden floating">
+              <img src="https://raw.githubusercontent.com/joshualoo12/Portfolio/refs/heads/main/IMG_0308.JPEG" alt="Joshua Loo" class="w-full h-full object-cover" />
             </div>
-
-            <div class="lg:flex items-center">
-                <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
-                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Who I Am</h3>
-                    <p class="text-gray-600 mb-6">
-                        I'm an insight-driven strategist with a passion for understanding human behavior through technical means and translating those insights into brand action. With a background in business and data science, I bridge the gap between customer needs and business goals.
-                    </p>
-                </div>
-                <div class="lg:w-1/2">
-                    <div class="bg-gray-50 p-8 rounded-xl">
-                        <h4 class="text-xl font-semibold text-gray-900 mb-6">My Philosophy</h4>
-                        <div class="space-y-6">
-                            <div class="flex">
-                                <div class="flex-shrink-0 mt-1">
-                                    <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
-                                        <i class="fas fa-lightbulb text-blue-600"></i>
-                                    </div>
-                                </div>
-                                <div class="ml-4">
-                                    <h5 class="font-medium text-gray-900">Customer-Centric Innovation</h5>
-                                    <p class="text-gray-600 mt-1">
-                                        True innovation starts with deep customer understanding, not technology.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="flex">
-                                <div class="flex-shrink-0 mt-1">
-                                    <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center">
-                                        <i class="fas fa-project-diagram text-purple-600"></i>
-                                    </div>
-                                </div>
-                                <div class="ml-4">
-                                    <h5 class="font-medium text-gray-900">Holistic Experience Design</h5>
-                                    <p class="text-gray-600 mt-1">
-                                        Every touchpoint matters — from digital to physical to emotional.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="flex">
-                                <div class="flex-shrink-0 mt-1">
-                                    <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
-                                        <i class="fas fa-chart-line text-green-600"></i>
-                                    </div>
-                                </div>
-                                <div class="ml-4">
-                                    <h5 class="font-medium text-gray-900">Data-Informed Creativity</h5>
-                                    <p class="text-gray-600 mt-1">
-                                        The magic happens when insights meet imagination.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="absolute -bottom-4 -right-4 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
+              <div class="text-blue-600 dark:text-blue-400 font-bold text-2xl">Early Career</div>
+              <div class="text-gray-600 dark:text-gray-300 text-sm">Strategist & Analyst</div>
             </div>
+          </div>
         </div>
-      </section>
-      <script>
-          const darkModeToggle = document.getElementById('darkModeToggle');
-          const mobileDarkModeToggle = document.getElementById('mobileDarkModeToggle');
-          const darkModeIcon = document.getElementById('darkModeIcon');
-          const mobileDarkModeIcon = document.getElementById('mobileDarkModeIcon');
+      </div>
+    </div>
+  </section>
 
-          function toggleDarkMode() {
-              document.documentElement.classList.toggle('dark');
-              const isDark = document.documentElement.classList.contains('dark');
-              localStorage.setItem('darkMode', isDark);
-              updateIcons(isDark);
-          }
+  <!-- About Section -->
+<section id="about" class="py-16 bg-white dark:bg-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">About Me</h2>
+      <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+    </div>
 
-          function updateIcons(isDark) {
-              if (isDark) {
-                  darkModeIcon.classList.replace('fa-moon', 'fa-sun');
-                  mobileDarkModeIcon.classList.replace('fa-moon', 'fa-sun');
-              } else {
-                  darkModeIcon.classList.replace('fa-sun', 'fa-moon');
-                  mobileDarkModeIcon.classList.replace('fa-sun', 'fa-moon');
-              }
-          }
+    <div class="lg:flex items-center">
+      <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
+        <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Who I Am</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          I'm an insight-driven strategist with a passion for understanding human behavior through technical means and translating those insights into brand action. With a background in business and data science, I bridge the gap between customer needs and business goals.
+        </p>
+      </div>
+      <div class="lg:w-1/2">
+        <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl">
+          <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">My Philosophy</h4>
+          <div class="space-y-6">
+            <div class="flex">
+              <div class="flex-shrink-0 mt-1">
+                <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                  <i class="fas fa-lightbulb text-blue-600"></i>
+                </div>
+              </div>
+              <div class="ml-4">
+                <h5 class="font-medium text-gray-900 dark:text-white">Customer-Centric Innovation</h5>
+                <p class="text-gray-600 dark:text-gray-300 mt-1">
+                  True innovation starts with deep customer understanding, not technology.
+                </p>
+              </div>
+            </div>
+            <div class="flex">
+              <div class="flex-shrink-0 mt-1">
+                <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center">
+                  <i class="fas fa-project-diagram text-purple-600"></i>
+                </div>
+              </div>
+              <div class="ml-4">
+                <h5 class="font-medium text-gray-900 dark:text-white">Holistic Experience Design</h5>
+                <p class="text-gray-600 dark:text-gray-300 mt-1">
+                  Every touchpoint matters — from digital to physical to emotional.
+                </p>
+              </div>
+            </div>
+            <div class="flex">
+              <div class="flex-shrink-0 mt-1">
+                <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                  <i class="fas fa-chart-line text-green-600"></i>
+                </div>
+              </div>
+              <div class="ml-4">
+                <h5 class="font-medium text-gray-900 dark:text-white">Data-Informed Creativity</h5>
+                <p class="text-gray-600 dark:text-gray-300 mt-1">
+                  The magic happens when insights meet imagination.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-          // Check for saved preference
-          if (localStorage.getItem('darkMode') === 'true') {
-              document.documentElement.classList.add('dark');
-              updateIcons(true);
-          }
+  <!-- Script: Dark Mode Toggle -->
+  <script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const darkModeIcon = document.getElementById('darkModeIcon');
 
-          // Event listeners
-          darkModeToggle.addEventListener('click', toggleDarkMode);
-          mobileDarkModeToggle.addEventListener('click', toggleDarkMode);
-      </script>
-  </body>
-  </html>
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('darkMode', isDark);
+      updateIcons(isDark);
+    }
+
+    function updateIcons(isDark) {
+      if (darkModeIcon) {
+        if (isDark) {
+          darkModeIcon.classList.replace('fa-moon', 'fa-sun');
+        } else {
+          darkModeIcon.classList.replace('fa-sun', 'fa-moon');
+        }
+      }
+    }
+
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const storedPreference = localStorage.getItem('darkMode');
+
+    if (storedPreference === 'true' || (storedPreference === null && prefersDark)) {
+      document.documentElement.classList.add('dark');
+      updateIcons(true);
+    }
+
+    darkModeToggle?.addEventListener('click', toggleDarkMode);
+  </script>
+</body>
+</html>
