@@ -1,1 +1,53 @@
+[
+  {
+    "title": "Econ 148 — Climate & Conflict Replication (PNAS 2009)",
+    "subtitle": "Reproducing core results from Burke et al. (2009)",
+    "role": "Student Researcher",
+    "date": "Spring 2025",
+    "summary": "End-to-end replication of climate–civil war results in Sub-Saharan Africa: data cleaning, OLS with fixed effects and clustered SEs, robustness checks, and reproducible outputs.",
+    "tags": ["Econometrics","Replication","Pandas","Statsmodels","Clustered SEs","Africa"],
+    "links": {
+      "deck": "/assets/projects/econ148_overview.pdf",
+      "github": "https://github.com/<your-username>/econ148-burke-replication"
+    }
+  },
+  {
+    "title": "Econ 148 — Table Models (Models 1–3)",
+    "subtitle": "Temperature & precipitation effects with FE and clustered SEs",
+    "role": "Student Researcher",
+    "date": "May 2025",
+    "summary": "Implements three OLS specifications with country and year fixed effects; examines multicollinearity, adds precipitation controls, and compiles a clean combined results table.",
+    "tags": ["OLS","Fixed Effects","Replication","Table Output","Statsmodels"],
+    "links": {
+      "deck": "/assets/projects/econ148_models_summary.pdf",
+      "live": "/assets/projects/econ148_models_table.html",
+      "github": "https://github.com/<your-username>/econ148-burke-replication/tree/main/project3"
+    }
+  },
+  {
+    "title": "Econ 148 — Figure 1 Uncertainty Panels",
+    "subtitle": "Climate-only, regression-only, and combined uncertainty",
+    "role": "Student Researcher",
+    "date": "May 2025",
+    "summary": "Recreates the three uncertainty panels for conflict risk under warming scenarios; documents bootstrap strategy, parameter draws, and assumptions behind projections.",
+    "tags": ["Uncertainty","Bootstrap","Visualization","Matplotlib","Reproduction"],
+    "links": {
+      "deck": "/assets/projects/econ148_fig1_case_study.pdf",
+      "github": "https://github.com/<your-username>/econ148-burke-replication/tree/main/fig1"
+    }
+  },
+  {
+    "title": "Econ 148 — Project 3: Projections & Pipeline",
+    "subtitle": "Processing monthly projections to analysis-ready arrays",
+    "role": "Student Researcher",
+    "date": "May 2025",
+    "summary": "Builds a reproducible pipeline from monthly climate inputs to model-ready matrices; handles NA checks, windowing, region masks, and exports clean tables/figures.",
+    "tags": ["Data Pipeline","NumPy","Xarray","Reproducibility","Projections"],
+    "links": {
+      "deck": "/assets/projects/econ148_project3.pdf",
+      "live": "/assets/projects/econ148_project3_notebook.html",
+      "github": "https://github.com/<your-username>/econ148-burke-replication/tree/main/project3"
+    }
+  }
+]
 
