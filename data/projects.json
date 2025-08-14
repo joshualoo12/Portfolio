@@ -1,49 +1,10 @@
 [
   {
-    "title": "Econ 148 — Climate & Conflict Replication (PNAS 2009)",
-    "subtitle": "Reproducing core results from Burke et al. (2009)",
-    "role": "Student Researcher",
-    "date": "Spring 2025",
-    "summary": "End-to-end replication of climate–civil war results in Sub-Saharan Africa: data cleaning, OLS with fixed effects and clustered SEs, robustness checks, and reproducible outputs.",
-    "tags": ["Econometrics","Replication","Pandas","Statsmodels","Clustered SEs","Africa"],
-    "cover": "data/assets/projects/econ148_overview_cover.jpg",
-    "links": {
-      "deck": "data/assets/projects/econ148_overview.pdf",
-      "live": "data/assets/projects/econ148_overview.html"
-    }
-  },
-  {
-    "title": "Econ 148 — Table Models (Models 1–3)",
-    "subtitle": "Temperature & precipitation effects with FE and clustered SEs",
-    "role": "Student Researcher",
-    "date": "May 2025",
-    "summary": "Implements three OLS specifications with country and year fixed effects; examines multicollinearity, adds precipitation controls, and compiles a clean combined results table.",
-    "tags": ["OLS","Fixed Effects","Replication","Table Output","Statsmodels"],
-    "cover": "data/assets/projects/econ148_models_cover.jpg",
-    "links": {
-      "deck": "data/assets/projects/econ148_models_summary.pdf",
-      "live": "data/assets/projects/econ148_models_table.html"
-    }
-  },
-  {
-    "title": "Econ 148 — Figure 1 Uncertainty Panels",
-    "subtitle": "Climate-only, regression-only, and combined uncertainty",
-    "role": "Student Researcher",
-    "date": "May 2025",
-    "summary": "Recreates the three uncertainty panels for conflict risk under warming scenarios; documents bootstrap strategy, parameter draws, and assumptions behind projections.",
-    "tags": ["Uncertainty","Bootstrap","Visualization","Matplotlib","Reproduction"],
-    "cover": "data/assets/projects/econ148_fig1_cover.jpg",
-    "links": {
-      "deck": "data/assets/projects/econ148_fig1_case_study.pdf",
-      "live": "data/assets/projects/econ148_fig1.html"
-    }
-  },
-  {
-    "title": "Econ 148 — Burke et al. (2009) Replication Final Project",
+    "title": "Econ 148 — Burke et al. (2009) Replication Final Project (Figure 3)",
     "subtitle": "Climate change and civil war in Sub-Saharan Africa",
     "role": "Student Researcher",
     "date": "May 4, 2025",
-    "summary": "Full replication of Burke et al. (2009) on climate change and civil war in Africa. Includes data cleaning, econometric models with fixed effects and clustered SEs, and reproduction of core tables and figures from the original paper.",
+    "summary": "Full replication of Burke et al. (2009) on climate change and civil war in Africa. Includes data cleaning, econometric models with fixed effects and clustered SEs, and reproduction of Figure 3 with projections and analysis.",
     "tags": ["Econometrics","Replication","Climate","Conflict","R","Python"],
     "cover": "data/assets/projects/econ148_final_cover.png",
     "links": {
@@ -52,3 +13,4 @@
     }
   }
 ]
+
