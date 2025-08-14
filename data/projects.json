@@ -6,9 +6,10 @@
     "date": "Spring 2025",
     "summary": "End-to-end replication of climate–civil war results in Sub-Saharan Africa: data cleaning, OLS with fixed effects and clustered SEs, robustness checks, and reproducible outputs.",
     "tags": ["Econometrics","Replication","Pandas","Statsmodels","Clustered SEs","Africa"],
+    "cover": "data/assets/projects/econ148_overview_cover.jpg",
     "links": {
-      "deck": "/assets/projects/econ148_overview.pdf",
-      "github": "https://github.com/<your-username>/econ148-burke-replication"
+      "deck": "data/assets/projects/econ148_overview.pdf",
+      "live": "data/assets/projects/econ148_overview.html"
     }
   },
   {
@@ -18,10 +19,10 @@
     "date": "May 2025",
     "summary": "Implements three OLS specifications with country and year fixed effects; examines multicollinearity, adds precipitation controls, and compiles a clean combined results table.",
     "tags": ["OLS","Fixed Effects","Replication","Table Output","Statsmodels"],
+    "cover": "data/assets/projects/econ148_models_cover.jpg",
     "links": {
-      "deck": "/assets/projects/econ148_models_summary.pdf",
-      "live": "/assets/projects/econ148_models_table.html",
-      "github": "https://github.com/<your-username>/econ148-burke-replication/tree/main/project3"
+      "deck": "data/assets/projects/econ148_models_summary.pdf",
+      "live": "data/assets/projects/econ148_models_table.html"
     }
   },
   {
@@ -31,23 +32,23 @@
     "date": "May 2025",
     "summary": "Recreates the three uncertainty panels for conflict risk under warming scenarios; documents bootstrap strategy, parameter draws, and assumptions behind projections.",
     "tags": ["Uncertainty","Bootstrap","Visualization","Matplotlib","Reproduction"],
+    "cover": "data/assets/projects/econ148_fig1_cover.jpg",
     "links": {
-      "deck": "/assets/projects/econ148_fig1_case_study.pdf",
-      "github": "https://github.com/<your-username>/econ148-burke-replication/tree/main/fig1"
+      "deck": "data/assets/projects/econ148_fig1_case_study.pdf",
+      "live": "data/assets/projects/econ148_fig1.html"
     }
   },
   {
-    "title": "Econ 148 — Project 3: Projections & Pipeline",
-    "subtitle": "Processing monthly projections to analysis-ready arrays",
+    "title": "Econ 148 — Burke et al. (2009) Replication Final Project",
+    "subtitle": "Climate change and civil war in Sub-Saharan Africa",
     "role": "Student Researcher",
-    "date": "May 2025",
-    "summary": "Builds a reproducible pipeline from monthly climate inputs to model-ready matrices; handles NA checks, windowing, region masks, and exports clean tables/figures.",
-    "tags": ["Data Pipeline","NumPy","Xarray","Reproducibility","Projections"],
+    "date": "May 4, 2025",
+    "summary": "Full replication of Burke et al. (2009) on climate change and civil war in Africa. Includes data cleaning, econometric models with fixed effects and clustered SEs, and reproduction of core tables and figures from the original paper.",
+    "tags": ["Econometrics","Replication","Climate","Conflict","R","Python"],
+    "cover": "data/assets/projects/econ148_final_cover.png",
     "links": {
-      "deck": "/assets/projects/econ148_project3.pdf",
-      "live": "/assets/projects/econ148_project3_notebook.html",
-      "github": "https://github.com/<your-username>/econ148-burke-replication/tree/main/project3"
+      "live": "data/assets/projects/Econ148BurkeRep.html",
+      "deck": "data/assets/projects/Finalprojectecon148_written.pdf"
     }
   }
 ]
-
