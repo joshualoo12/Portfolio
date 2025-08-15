@@ -7,9 +7,7 @@
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { darkMode: 'class' };
-  </script>
+  <script>tailwind.config = { darkMode: 'class' };</script>
 
   <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -18,13 +16,12 @@
   <style>
     body { font-family: 'Inter', sans-serif; }
     .gradient-text { background: linear-gradient(90deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .tag { @apply inline-flex items-center px-2 py-1 text-xs rounded-full border; }
   </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white">
 
 <!-- Navbar -->
-<nav class="fixed w-full bg-white dark:bg-gray-800 shadow-sm z-40">
+<nav class="fixed w-full bg-white/90 dark:bg-gray-800/90 backdrop-blur shadow-sm z-40">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-16 items-center">
       <a href="index.html" class="text-xl font-bold gradient-text">Joshua Loo</a>
@@ -42,74 +39,36 @@
 <header class="pt-24 pb-6">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h1 class="text-3xl md:text-4xl font-bold">Projects</h1>
-    <p class="text-gray-600 dark:text-gray-300 mt-2">A curated selection of my academic and technical work.</p>
+    <p class="text-gray-600 dark:text-gray-300 mt-2">A focused look at my Econ 148 replication work.</p>
   </div>
 </header>
 
-<!-- Projects Grid -->
-<main class="pb-24">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div id="grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
-    <div id="loading" class="text-center text-gray-500 dark:text-gray-400 mt-12">Loading projects…</div>
-    <div id="error" class="hidden text-center text-red-600 dark:text-red-400 mt-12">
-      Couldn’t load projects. Check <code>data/projects.json</code>.
-    </div>
-  </div>
-</main>
 
-<!-- Template -->
-<template id="cardTemplate">
-  <article class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden flex flex-col">
-    <div class="aspect-video bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
-      <img class="w-full h-full object-cover" alt="Project cover" />
-      <i class="fallbackIcon hidden fa-solid fa-diagram-project text-3xl text-gray-400"></i>
-    </div>
-    <div class="p-5 flex-1 flex flex-col">
-      <h3 class="text-lg font-semibold"></h3>
-      <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 subtitle"></p>
-      <p class="text-sm text-gray-700 dark:text-gray-300 mt-3 summary"></p>
-      <div class="mt-5 flex flex-wrap gap-2">
-        <a class="live hidden inline-flex items-center gap-2 px-3 py-2 rounded-md border hover:bg-blue-50 dark:hover:bg-gray-700" target="_blank" rel="noopener">
-          <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i> Live
-        </a>
-        <a class="deck hidden inline-flex items-center gap-2 px-3 py-2 rounded-md border hover:bg-blue-50 dark:hover:bg-gray-700" target="_blank" rel="noopener">
-          <i class="fa-regular fa-file-pdf text-sm"></i> Case Study
-        </a>
+      <!-- Content -->
+      <div class="p-6 md:p-8">
+        <div class="text-sm text-gray-500 dark:text-gray-400">Student Researcher • May 4, 2025</div>
+        <h2 class="text-2xl md:text-3xl font-bold mt-1">Econ 148 — Burke et al. (2009) Replication Final Project </h2>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Climate change and civil war in Sub-Saharan Africa</p>
+        <p class="text-base text-gray-700 dark:text-gray-300 mt-4">
+          Full replication of Burke et&nbsp;al. (2009). Includes data cleaning, econometric models with fixed
+          effects and clustered SEs, and reproduction of projections and analysis.
+        </p>
+
+        <!-- Buttons -->
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="data/assets/projects/Econ148BurkeRep.html" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700">
+            <i class="fa-solid fa-code"></i> Code (HTML)
+          </a>
+          <a href="data/assets/projects/Finalprojectecon148_written.pdf" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-md border hover:bg-blue-50 dark:hover:bg-gray-700">
+            <i class="fa-regular fa-file-pdf"></i> PDF (Write-up)
+          </a>
+        </div>
       </div>
-    </div>
-  </article>
-</template>
-
-<script>
-const PROJECTS_JSON = 'data/projects.json';
-const grid = document.getElementById('grid');
-const template = document.getElementById('cardTemplate');
-const loading = document.getElementById('loading');
-const error = document.getElementById('error');
-
-fetch(PROJECTS_JSON, { cache: 'no-store' })
-  .then(r => { if (!r.ok) throw new Error('Missing projects.json'); return r.json(); })
-  .then(json => {
-    grid.innerHTML = '';
-    json.forEach(p => grid.appendChild(makeCard(p)));
-  })
-  .catch(() => { error.classList.remove('hidden'); })
-  .finally(() => { loading.classList.add('hidden'); });
-
-function makeCard(p) {
-  const node = template.content.firstElementChild.cloneNode(true);
-  const img = node.querySelector('img');
-  const fallback = node.querySelector('.fallbackIcon');
-  if (p.cover) { img.src = p.cover; img.alt = p.title + ' cover'; }
-  else { img.classList.add('hidden'); fallback.classList.remove('hidden'); }
-  node.querySelector('h3').textContent = p.title || 'Untitled Project';
-  node.querySelector('.subtitle').textContent = p.subtitle || '';
-  node.querySelector('.summary').textContent = p.summary || '';
-  if (p.links?.live) { const a = node.querySelector('.live'); a.href = p.links.live; a.classList.remove('hidden'); }
-  if (p.links?.deck) { const a = node.querySelector('.deck'); a.href = p.links.deck; a.classList.remove('hidden'); }
-  return node;
-}
-</script>
+    </article>
+  </div>
+</section>
 
 </body>
 </html>
